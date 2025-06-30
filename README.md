@@ -2,7 +2,7 @@
 
 # 🚨 **Incident Response: Phishing via Fake Software Update** 🚨  
 
-<img width="700*500" src="https://github.com/user-attachments/assets/e9d2fd77-dc9f-4faa-a735-925e1d3a25f0" alt="Tor Logo with the onion and a crosshair on it"/>
+<img width="700*500" src="https://github.com/user-attachments/assets/56e78020-f6aa-453d-94cb-f1096e0bab1a" alt="Tor Logo with the onion and a crosshair on it"/>
 
 ---
 
