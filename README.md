@@ -80,10 +80,13 @@ DeviceProcessEvents
 ```kql
 DeviceFileEvents
 | where DeviceName == "nessa-windows"
-| where FileName endswith "ps1"
+| where InitiatingProcessAccountName == "bigmomma"
+| where FileName contains "ps1"
+| project Timestamp, DeviceName, ActionType, FileName, FolderPath, InitiatingProcessFileName, InitiatingProcessCommandLine, InitiatingProcessAccountName
 | order by Timestamp desc 
 ```
-![Screenshot 2025-01-26 131545](https://github.com/user-attachments/assets/0f60aaaa-fc7c-456e-8680-5a2a3d7ed5db)
+![Screenshot 2025-01-26 131545](https://github.com/user-attachments/assets/f190fc54-f255-4099-a429-46a419cea15f)
+
 ---
 
 ### 2️⃣ **Process Execution**  
