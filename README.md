@@ -73,13 +73,13 @@ DeviceProcessEvents
 
 ### 1️⃣ **File Download (Initial Access)**  
 - **TTP**: [T1193](https://attack.mitre.org/techniques/T1193) - Spear Phishing Link  
-- **Event**: Employees receive a phishing mimicking IT with a link to a "critical software update."  
+- **Event**: Employees receive a phishing email that mimics IT, containing a link to a "critical software update."  
 - **Impact**: The link leads to downloading a PowerShell payload.  
 
 **Relevant Query**:  
 ```kql
 DeviceFileEvents
-| where DeviceName == "tphish"
+| where DeviceName == "nessa-windows"
 | where FileName endswith "ps1"
 | order by Timestamp desc 
 ```
