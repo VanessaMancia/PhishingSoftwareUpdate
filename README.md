@@ -41,7 +41,7 @@ https://raw.githubusercontent.com/VanessaMancia/PowerShell-test-script/refs/head
 
 ## 🕵️‍♂️ **High-Level IoC Discovery Plan**  
 **Focus Areas**:  
-1️⃣ Check **DeviceFileEvents** for suspicious file activities.  
+1️⃣ Check **DeviceFileEvents** for suspicious file activity. 
 2️⃣ Check **DeviceProcessEvents** for signs of malicious execution.  
 3️⃣ Check **DeviceNetworkEvents** for outgoing connections, especially over known malicious ports.  
 
