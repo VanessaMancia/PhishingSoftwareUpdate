@@ -112,7 +112,7 @@ DeviceProcessEvents
 | project Timestamp, DeviceName, FileName, ProcessCommandLine, InitiatingProcessAccountName, InitiatingProcessCommandLine
 | order by Timestamp desc
 ```
-![Screenshot 2025-01-26 134312](https://ggithub.com/user-attachments/assets/b64c07c0-13a4-4e54-9aa2-aa3e762c2fff)
+![Screenshot 2025-01-26 134312](https://github.com/user-attachments/assets/b64c07c0-13a4-4e54-9aa2-aa3e762c2fff)
 
 ---
 
