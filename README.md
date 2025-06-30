@@ -134,8 +134,18 @@ union DeviceNetworkEvents, DeviceProcessEvents
 ---
 
 ### 4️⃣ **Lateral Movement & Credential Dumping**  
-- **TTPs**:  
-  - [T1210](https://attack.mitre.org/techniques/T1210) - Exploitation of Remote Services  
+- **TTP**:  [T1210](https://attack.mitre.org/techniques/T1210) - Exploitation of Remote Services  
+- **Event**: Several other devices Communicating with the C2 server over the internet, potentially exfiltrating credentials.  
+- **Query Used**:  
+```kql
+union DeviceNetworkEvents,DeviceProcessEvents
+| where Timestamp > ago(6h)
+| where RemoteUrl contains "raw.githubusercontent.com" or InitiatingProcessCommandLine has "phishingFakeSoftwareUpdate"
+| project Timestamp, DeviceName, RemoteUrl, RemoteIP, InitiatingProcessCommandLine, FileName, FolderPath, ActionType
+| order by Timestamp desc
+```
+![image](https://github.com/user-attachments/assets/eaef1372-e359-4f12-8d78-b770aed23944)
+
 
 ---
 
