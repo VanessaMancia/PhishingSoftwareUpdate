@@ -94,27 +94,25 @@ DeviceFileEvents
 - **Event**: Malicious PowerShell script execution on victim devices.  
 - **Query Used**:  
 ```kql
-let VMName = "tphish";
-let specificTime = datetime(2025-01-26T19:01:29.0367754Z);
+let specificTime = datetime(2025-06-30T20:42:15.0207278Z);
 DeviceProcessEvents
-| where Timestamp between ((specificTime - 2m) .. (specificTime + 2m))
-| where DeviceName == VMName
-| order by Timestamp desc
+| where Timestamp between ((specificTime - 2m)..(specificTime +2m))
+| where DeviceName == "nessa-windows"
+| order by Timestamp desc 
 ```
 
-![Screenshot 2025-01-26 133010](https://github.com/user-attachments/assets/31b64c99-ad4f-48c1-b89f-ff5a34d5962f)
+![Screenshot 2025-01-26 133010](https://github.com/user-attachments/assets/fb1a3ed6-c915-42fc-865a-d1eb1fe45cff)
 
 ---
 
 ```kql
 DeviceProcessEvents
 | where FileName == "powershell.exe"
-| where ProcessCommandLine contains "phishingFakeSoftwareUpdate.ps1" or ProcessCommandLine contains "Add-Type -AssemblyName PresentationFramework"
-| extend Timestamp = Timestamp, InitiatingProcessAccountName = InitiatingProcessAccountName
+| where ProcessCommandLine contains "phishingFakeSoftwareUpdate.ps1"
 | project Timestamp, DeviceName, FileName, ProcessCommandLine, InitiatingProcessAccountName, InitiatingProcessCommandLine
 | order by Timestamp desc
 ```
-![Screenshot 2025-01-26 134312](https://github.com/user-attachments/assets/31820b28-e89e-4e42-9ea5-24060e2a7508)
+![Screenshot 2025-01-26 134312](https://ggithub.com/user-attachments/assets/b64c07c0-13a4-4e54-9aa2-aa3e762c2fff)
 
 ---
 
