@@ -124,11 +124,12 @@ DeviceProcessEvents
 ```kql
 union DeviceNetworkEvents, DeviceProcessEvents
 | where Timestamp > ago(6h)
+| where DeviceName == "nessa-windows"
 | where RemoteUrl contains "raw.githubusercontent.com" or InitiatingProcessCommandLine has "phishingFakeSoftwareUpdate.ps1"
 | project Timestamp, DeviceName, RemoteUrl, RemoteIP, InitiatingProcessCommandLine, FileName, FolderPath, ActionType
 | order by Timestamp desc
 ```
-![Screenshot 2025-01-26 140306](https://github.com/user-attachments/assets/f41a1d4e-246e-4ca1-9053-5a0630777595)
+![Screenshot 2025-01-26 140306](https://github.com/user-attachments/assets/92b90182-bdcb-4d0b-a86a-df3a193d96f4)
 
 ---
 
